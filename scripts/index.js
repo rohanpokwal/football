@@ -11,7 +11,30 @@ let teams = [
 //this is our windows.onload function that runs code once the dom is loaded
 window.onload = function () {
   initDropdown();
+
+  //grab our button off the page
+  let theButton = document.querySelector("#theButton");
+
+  //you need to do something when the button is clicked
+  //when the button is clicked call the displayFootballTeam
+  theButton.addEventListener("click", displayFootBallTeam);
 };
+
+//this function will display the details about our football team
+function displayFootBallTeam() {
+  //get the dropdown from the page
+  let theDropdown = document.querySelector("#footballSelect");
+  let resultsParagraph = document.querySelector("#results");
+
+  //get the index of the selected option in the dropdown
+  //this gives me the value
+  let selectedIndex = theDropdown.selectedIndex;
+
+  //get the team
+  let selectedTeam = teams[selectedIndex];
+
+  resultsParagraph.innerHTML = `You selected the ${selectedTeam.name} (${selectedTeam.code}) who play in ${selectedTeam.plays}`;
+}
 
 function initDropdown() {
   //get the dropdown from the HTML document and assign it to a variable
