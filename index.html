@@ -6,10 +6,16 @@
     <title>Football</title>
   </head>
   <body>
-    <select name="footballSelect" id="footballSelect"></select>
+    <!-- wrapping our form fields in an actual form -->
+    <form id="footballForm">
+      <!-- added a select (dropdown list) to hold our football teams -->
+      <select name="footballSelect" id="footballSelect"></select>
 
-    <button id="theButton">Select a Team</button>
+      <!-- button toclick to show the selected teams information -->
+      <button>Select a Team</button>
+    </form>
 
+    <!-- this is a paragraph where we will display the informatuon about the team -->
     <p id="results"></p>
 
     <script src="scripts/index.js"></script>
